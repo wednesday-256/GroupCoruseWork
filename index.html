@@ -15,18 +15,52 @@
         border: 0px;
         font-family: Arial;
       }
+      body {
+        background-image: linear-gradient(
+          95.2deg,
+          rgba(173, 252, 234, 1) 26.8%,
+          rgba(192, 229, 246, 1) 64%
+        );
+        height: 100vh;
+      }
+      #lessonBox {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .lessonItem {
+        display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        margin: 10px;
+        padding: 9px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .lessonItem li {
+        padding: 5px;
+      }
+      h2 {
+        padding: 10px;
+        text-align: center;
+      }
     </style>
     <!-- main app section  -->
     <div id="app">
+      <h2>LESSONS LIST</h2>
       <div id="lessonBox">
-        <div v-for="lesson in lessons">
-          <div class="lessonItem">
-            <ul>
-              <li><b>Topic:</b> {{lesson.topic}}</li>
-              <li><b>Location:</b>{{ lesson.location}}</li>
-              <li><b>Price:</b> {{lesson.price}}</li>
-            </ul>
-          </div>
+        <div class="lessonItem" v-for="lesson in lessons">
+          <ul>
+            <li><b>Topic:</b> {{lesson.topic}}</li>
+            <li><b>Location:</b> {{ lesson.location}}</li>
+            <li><b>Price:</b> {{lesson.price}}</li>
+          </ul>
         </div>
       </div>
     </div>

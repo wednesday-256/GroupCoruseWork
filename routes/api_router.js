@@ -10,6 +10,7 @@ const lessons = [
 ];
 api.get("/lessons", (req, res) => {
   //   res.send("This is the lessons page");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send(lessons);
 });
 
